@@ -13,9 +13,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-const val PRODUCTION_URL = "https://api.example.com/"
+const val PRODUCTION_URL = "http://13.209.10.30:3000/"
 const val TEST_URL = "https://test.example.com/"
-private val base_url: String = TEST_URL
+private val base_url: String = PRODUCTION_URL
 
 fun getBaseUrl() = base_url
 

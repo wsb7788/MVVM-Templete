@@ -4,8 +4,11 @@ import com.google.gson.annotations.SerializedName
 import com.minux.template2021.data.entities.Auth
 
 data class AuthResponse(
-    @SerializedName(value = "isSuccess") val isSuccess : Boolean,
+    @SerializedName(value = "check") val check : Boolean,
     @SerializedName(value = "code") val code : Int,
+    @SerializedName(value = "id") val id : String,
+    @SerializedName(value = "password") val password : String,
     @SerializedName(value = "message") val message : String,
-    @SerializedName(value = "result") val auth : Auth?
+    @SerializedName(value = "nickname") val nickname : String,
+    @SerializedName(value = "auth") val auth : Auth?,
 )

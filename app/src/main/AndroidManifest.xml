@@ -16,7 +16,8 @@
         android:theme="@style/Theme.Template2021"
         tools:targetApi="q">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".ui.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

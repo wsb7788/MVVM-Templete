@@ -24,7 +24,7 @@ class SplashViewModel(private val repository: AuthRepository, private val shared
                 delay(3000)
                 val authResponse = repository.autoLogin()
 
-                if(authResponse.isSuccess) {
+                if(authResponse.check) {
                     authResponse.auth?.let {
                         splashListener?.onAutoLoginSuccess(authResponse.message)
                         sharedPreferencesManager.saveJwtToken(authResponse.auth.jwtToken!!)
@@ -47,7 +47,7 @@ class SplashViewModel(private val repository: AuthRepository, private val shared
                 delay(1000)
                 val authResponse = repository.autoLogin()
 
-                if(authResponse.isSuccess) {
+                if(authResponse.check) {
                     authResponse.auth?.let {
                         splashListener?.onAutoLoginSuccessWithChannelUrl(authResponse.message,channelUrl)
                         sharedPreferencesManager.saveJwtToken(authResponse.auth.jwtToken!!)
@@ -71,7 +71,7 @@ class SplashViewModel(private val repository: AuthRepository, private val shared
             try {
                 val authResponse = repository.getVersion()
 
-                if(authResponse.isSuccess) {
+                if(authResponse.check) {
                     authResponse.auth?.let {
                         splashListener?.onGetVersionSuccess(authResponse.auth)
                         return@main

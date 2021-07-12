@@ -10,7 +10,7 @@ interface AuthService {
     @POST("users/signup")
     suspend fun signUp(@Body user: User): Response<AuthResponse>
 
-    @POST("users/login")
+    @POST("/login")
     suspend fun login(@Body user: User): Response<AuthResponse>
 
     @GET("users/autologin")
